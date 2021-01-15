@@ -1,0 +1,2 @@
+default:
+	pdflatex solution.tex

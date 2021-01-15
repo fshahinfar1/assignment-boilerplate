@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in,footskip=0.25in]{geometry}
+\usepackage{titlesec}
+\usepackage{amsmath}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}   % The style of the section title
+  {}                             % a prefix
+  {0pt}        % How much space exists between the prefix and the title
+  {\quad}    % How the section is represented
+
+% Title Definition
+\def \mytitletext {Course Name}
+\def \myauthorname {FirstName LastName}
+\def \mysubtitle{Assignment Name}
+\def \mystdno{12345678}
+
+\newcommand{\mytitle}{
+\begin{center}
+{
+    \Huge
+    \textbf{\mytitletext}
+    \par
+}
+
+{
+    \Large
+    \textbf \mysubtitle
+    \par
+}
+
+\vspace{5mm}
+{
+    \large
+    \myauthorname \\
+    \mystdno
+    \par
+}
+\par
+\end{center}
+}
+
+% Command Definitions
+\newcommand{\myhline}{\noindent\rule[0.5ex]{\linewidth}{1pt}\par}
+% ====================
+
+\begin{document}
+\mytitle
+
+% Problem one
+\input{pr1}
+\pagebreak
+
+\end{document}
