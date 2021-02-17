@@ -1,2 +1,4 @@
+OUTDIR = ./build/
 default:
-	xelatex solution.tex
+	mkdir -p $(OUTDIR)
+	xelatex -output-directory=$(OUTDIR) solution.tex

@@ -1,6 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in,footskip=0.25in]{geometry}
 \usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
 \usepackage{amsmath}
 
 % Import these packages for drawing markov chains
@@ -8,8 +10,11 @@
 \usetikzlibrary{automata, positioning}
 
 % xepersian should be the last package that is loaded
-\usepackage{xepersian}
-\settextfont{XB Niloofar}
+\usepackage[localise=on]{xepersian}
+% \settextfont{XB Niloofar}
+\settextfont{BNazanin}
+\setlatintextfont{Crimson}
+% ------------------------------------------------------------------------------
 
 \titleformat{\section}
   {\normalfont\Large\bfseries}   % The style of the section title
@@ -20,47 +25,52 @@
 % Title Definition
 \def \mytitletext {نام درس مربوطه}
 \def \myauthorname {نام و نام خانوادگی}
-\def \mysubtitle{اسم این سری از تکلیف}
-\def \mystdno{۱۲۳۴۵۶۷۸}
+\def \mysubtitle{اسم این سری از تمرین}
+\def \mystdno{(شماره دانشجویی)}
+\def \myuniversity{نام دانشگاه}
+\def \mydepartment{نام دانشکده}
+\def \mylogo{res/logo.pdf}  % نشان دانشگاه
 
+% ------------------------------------------------------------------------------
 \newcommand{\mytitle}{
+  % Logo
+  \begin{tabular}{cc}
+  \includegraphics[width=0.1\linewidth]{\mylogo} &
+    \raisebox{0.05\linewidth}{
+      \begin{tabular}{c}
+        \myuniversity \\
+        \mydepartment
+      \end{tabular}
+    }
+\end{tabular}
+% Title
 \begin{center}
-{
-    \Huge
-    \textbf{\mytitletext}
-    \par
-}
-
-{
-    \Large
-    \textbf \mysubtitle
-    \par
-}
-
+{\Huge\textbf{\mytitletext}\par}
+\vspace{3mm}
+{\Large\textbf\mysubtitle\par}
 \vspace{5mm}
-{
-    \large
-    \myauthorname \\
-    \mystdno
-    \par
-}
-\par
+{\large\myauthorname \\ \mystdno \par}
 \end{center}
 }
 
 % Command Definitions
 \newcommand{\myhline}{\noindent\rule[0.5ex]{\linewidth}{1pt}\par}
-% ====================
+% ------------------------------------------------------------------------------
+
 
 \begin{document}
 \mytitle
 
 % Problem one
-\input{pr1}
+\input{sec/pr1}
 \pagebreak
 
 % Problem two
-\input{pr2}
+\input{sec/pr2}
+\pagebreak
+
+% Problem three
+\input{sec/pr3}
 \pagebreak
 
 \end{document}
