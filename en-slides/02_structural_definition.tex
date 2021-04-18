@@ -1,0 +1,126 @@
+\begin{frame}
+    \frametitle{Structural Definition of Petri-Nets}
+    \begin{itemize}
+        \item {Petri-Nets are defined as a tuple shown below}
+    \end{itemize}
+    \begin{gather*}
+        C = (P, T, I, O, \mu) \\
+    \end{gather*}
+\end{frame}
+\begin{frame}
+    \frametitle{Structural Definition of Petri-Nets (continued)}
+    \begin{itemize}
+        \item {$P$ is the set of all possible places}
+        \item {$T$ is the set of all transitions}
+    \end{itemize}
+    \begin{gather*}
+        C = (P, T, I, O, \mu) \\
+        P := \text{set of places}~~;~~
+        T := \text{set of transitions} \\
+    \end{gather*}
+\end{frame}
+\begin{frame}
+    \frametitle{Structural Definition of Petri-Nets (continued)}
+    \begin{itemize}
+        \item {$I$ is a function returning the input places to a transition}
+    \end{itemize}
+    \begin{gather*}
+        C = (P, T, I, O, \mu) \\
+        P := \text{set of places}~~;~~
+        T := \text{set of transitions} \\
+        I \subset T \times \mathcal{P(P)}~~;~~
+        I(t_j) := \text{set of input places of $t_j$} \\
+    \end{gather*}
+\end{frame}
+\begin{frame}
+    \frametitle{Structural Definition of Petri-Nets (continued)}
+    \begin{itemize}
+        \item {$O$ is a function returning the output places to a transition}
+    \end{itemize}
+    \begin{gather*}
+        C = (P, T, I, O, \mu) \\
+        P := \text{set of places}~~;~~
+        T := \text{set of transitions} \\
+        I \subset T \times \mathcal{P(P)}~~;~~
+        I(t_j) := \text{set of input places of $t_j$} \\
+        O \subset T \times \mathcal{P(P)} ~~;~~
+        O(t_j) := \text{set of output places of $t_j$} \\
+    \end{gather*}
+\end{frame}
+\begin{frame}
+    \frametitle{Structural Definition of Petri-Nets (continued)}
+    \begin{itemize}
+        \item {$\mu$ is a function returning the number of tokens in each place}
+    \end{itemize}
+    \begin{gather*}
+        C = (P, T, I, O, \mu) \\
+        P := \text{set of places}~~;~~
+        T := \text{set of transitions} \\
+        I \subset T \times \mathcal{P(P)}~~;~~
+        I(t_j) := \text{set of input places of $t_j$} \\
+        O \subset T \times \mathcal{P(P)} ~~;~~
+        O(t_j) := \text{set of output places of $t_j$} \\
+        \mu \subset P \times \mathbb{N}~~;~~
+        \mu(p_i) := \text{number of tokens in the $i$-th place}
+    \end{gather*}
+\end{frame}
+\begin{frame}
+    \frametitle{Structural Definition of Petri-Nets (continued)}
+    \begin{gather*}
+        C = (P, T, I, O, \mu) \\
+        P := \text{set of places}~~;~~
+        T := \text{set of transitions} \\
+        I \subset T \times \mathcal{P(P)}~~;~~
+        I(t_j) := \text{set of input places of $t_j$} \\
+        O \subset T \times \mathcal{P(P)} ~~;~~
+        O(t_j) := \text{set of output places of $t_j$} \\
+        \mu \subset P \times \mathbb{N}~~;~~
+        \mu(p_i) := \text{number of tokens in the $i$-th place}
+    \end{gather*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Transition function $\delta$}
+    \begin{itemize}
+        \item {Function $\delta$ is in such way that returns next marking of the system when \textbf{enable} transition $t_j$ fires.}
+    \end{itemize}
+    \[\mu ^ 1 = \delta(\mu^0, t_j)\]
+    \begin{itemize}
+        \item {An execution can be shown as a sequence of $\mu$ values.}
+    \end{itemize}
+    \[(\mu^0, \mu^1, \mu^2, ...)\]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example 1}
+    \tikzset{node distance = 0.5cm and 0.5cm}
+    \begin{figure}
+        \centering
+        \intropetrinet[black][black][0.6]{}
+    \end{figure}
+    \begin{gather*}
+        C = (P,T,I,O, \mu^0)
+        \\
+        P = \{p_1, p_2, p_3, p_4, p_5\} ~ ~ ; ~ ~T = \{t_1, t_2, t_3, t_4\}
+        \\
+        I = \{(t_1, \{p_1,\}), (t_2, \{p_2, p_3, p_5\}),  (t_3, \{p_3,\}),  (t_4, \{p_4,\}),\}
+        \\
+        O = \{(t_1, \{p_2, p_3, p_5\}), (t_2, \{p_5\}),  (t_3, \{p_4,\}),  (t_4, \{p_3, p_2,\}),\}
+        \\
+        \mu^0 = \{(p_1, 1), (p_2, 0)  (p_3, 1),  (p_4, 0),  (p_5, 2) \}
+    \end{gather*}
+\end{frame}
+\begin{frame}
+    \frametitle{Example 2}
+    \tikzset{node distance = 0.5cm and 0.5cm}
+    \begin{figure}
+        \centering
+        \intropetrinetnext[black][black][0.6]{}
+    \end{figure}
+    \begin{gather*}
+        C' = (P, T, I, O, \mu^1)
+        \\
+        \mu^1 = \delta(\mu^0, t_1)
+    \end{gather*}
+\end{frame}
+

@@ -1,0 +1,180 @@
+% This is the example petri-net used in the slides
+\NewDocumentCommand{\intropetrinet}{O{black} O{black} O{0.6}}{
+\begin{tikzpicture}[thick,scale=#3, every node/.style={scale=#3}]
+\node[place, label=p1,tokens=1](p1){};
+\node[transition,minimum width=2mm,minimum height=12mm,label=t1, right=of p1, color=#1] (t1) {};
+\node[place, label=p5, right=of t1, tokens=2](p5){};
+\node[transition,minimum width=2mm,minimum height=12mm,label=t2, right=of p5, color=#2] (t2) {};
+\node[place, label=p2, above right=of t2](p2){};
+\node[place, label=below:p3, below right=of t2, tokens=1](p3){};
+\node[transition,minimum width=2mm,minimum height=12mm,label=t4] (t4) at ([shift=({330:2 cm})]p2){};
+\node[transition,minimum width=2mm,minimum height=12mm,label=t3, below=of t4] (t3) {};
+\node[place, label=p4](p4) at ([shift=(330:2 cm)]t4){};
+
+\draw[thick]
+(p1) edge[post] (t1)
+(t1) edge[bend left, post] (p2)
+(t1) edge[bend right, post] (p3)
+(t1) edge[post] (p5)
+(p5) edge [post] (t2)
+(t2) edge[post] (p5)
+(p2) edge[bend left, post] (t2)
+(p3) edge[bend right, post] (t2)
+(t4) edge[bend left, post] (p2)
+(t4) edge[bend right, post] (p3)
+(p3) edge[post] (t3)
+(t3) edge[post] (p4)
+(p4) edge[post] (t4)
+;
+\end{tikzpicture}
+}
+
+
+\NewDocumentCommand{\intropetrinetnext}{O{black} O{black} O{0.6}}{
+\begin{tikzpicture}[thick,scale=#3, every node/.style={scale=#3}]
+\node[place, label=p1,tokens=0](p1){};
+\node[transition,minimum width=2mm,minimum height=12mm,label=t1, right=of p1, color=#1] (t1) {};
+\node[place, label=p5, right=of t1, tokens=3](p5){};
+\node[transition,minimum width=2mm,minimum height=12mm,label=t2, right=of p5, color=#2] (t2) {};
+\node[place, label=p2, above right=of t2, tokens=1](p2){};
+\node[place, label=below:p3, below right=of t2, tokens=2](p3){};
+\node[transition,minimum width=2mm,minimum height=12mm,label=t4] (t4) at ([shift=({330:2 cm})]p2){};
+\node[transition,minimum width=2mm,minimum height=12mm,label=t3, below=of t4] (t3) {};
+\node[place, label=p4](p4) at ([shift=(330:2 cm)]t4){};
+
+\draw[thick]
+(p1) edge[post] (t1)
+(t1) edge[bend left, post] (p2)
+(t1) edge[bend right, post] (p3)
+(t1) edge[post] (p5)
+(p5) edge [post] (t2)
+(t2) edge[post] (p5)
+(p2) edge[bend left, post] (t2)
+(p3) edge[bend right, post] (t2)
+(t4) edge[bend left, post] (p2)
+(t4) edge[bend right, post] (p3)
+(p3) edge[post] (t3)
+(t3) edge[post] (p4)
+(p4) edge[post] (t4)
+;
+\end{tikzpicture}
+}
+
+
+\NewDocumentCommand{\diningphilos}{}{
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+
+\node[place, label=H1, tokens=1](h1){};
+\node[place, label=H2, tokens=1, right=of h1, xshift=2cm](h2){};
+\node[place, label=H3, tokens=1, right=of h2, xshift=2cm](h3){};
+
+\node[transition, minimum width=12mm, minimum height=2mm, label=left:G1, below=of h1](g1){};
+\node[transition, minimum width=12mm, minimum height=2mm, label=left:G2, below=of h2](g2){};
+\node[transition, minimum width=12mm, minimum height=2mm, label=left:G3, below=of h3](g3){};
+
+\node[place, label=below:E1, tokens=0, below=of g1](e1){};
+\node[place, label=below:E2, tokens=0, below=of g2](e2){};
+\node[place, label=below:E3, tokens=0, below=of g3](e3){};
+
+\node[place, label=F1, tokens=1, left=of e1](f1){};
+\node[place, label=F2, tokens=1, right=of e1](f2){};
+\node[place, label=F3, tokens=1, right=of e2](f3){};
+ 
+\node[transition, minimum width=12mm, minimum height=2mm, label=below left:R1, tokens=0, below=of e1](r1){};
+\node[transition, minimum width=12mm, minimum height=2mm, label=below left:R2, tokens=0, below=of e2](r2){};
+\node[transition, minimum width=12mm, minimum height=2mm, label=below left:R3, tokens=0, below=of e3](r3){};
+\draw[thick]
+(h1) edge[post] (g1)
+(h2) edge[post] (g2)
+(h3) edge[post] (g3)
+(f1) edge[post] (g1)
+% (f1) edge[post] (g3)
+(f2) edge[post] (g1)
+(f2) edge[post] (g2)
+(f3) edge[post] (g2)
+(f3) edge[post] (g3)
+%
+(g1) edge[post, color=black] (e1)
+(g2) edge[post, color=black] (e2)
+(g3) edge[post, color=black] (e3)
+%
+(e1) edge[post] (r1)
+(e2) edge[post] (r2)
+(e3) edge[post] (r3)
+%
+% (r1) edge[post] (h1)
+(r1) edge[post] (f1)
+(r1) edge[post] (f2)
+% (r2) edge[post] (h2)
+(r2) edge[post] (f2)
+(r2) edge[post] (f3)
+% (r3) edge[post] (h3)
+(r3) edge[post] (f3)
+% (r3) edge[post] (f1)
+;
+\draw [->,color=blue] (f1) to ++(0,2.5) -- ++(9.5, 0) -- (g3);
+\draw [->,color=red] (r1) to ++(-2.5,0) -- ++(0, 4.7) -- (h1);
+\draw [->,color=red] (r2) to ++(-2.5,0) -- ++(0, 4.7) -- (h2);
+\draw [->,color=red] (r3) to ++(-2.5,0) -- ++(0, 4.7) -- (h3);
+\draw [->,color=blue] (r3) to ++(0,-0.8) -|  (f1);
+\end{tikzpicture}
+}
+
+\NewDocumentCommand{\diningphilosnext}{}{
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+
+\node[place, label=H1, tokens=1](h1){};
+\node[place, label=H2, tokens=0, right=of h1, xshift=2cm](h2){};
+\node[place, label=H3, tokens=1, right=of h2, xshift=2cm](h3){};
+
+\node[transition, minimum width=12mm, minimum height=2mm, label=left:G1, below=of h1](g1){};
+\node[transition, minimum width=12mm, minimum height=2mm, label=left:G2, below=of h2, color=green](g2){};
+\node[transition, minimum width=12mm, minimum height=2mm, label=left:G3, below=of h3](g3){};
+
+\node[place, label=below:E1, tokens=0, below=of g1](e1){};
+\node[place, label=below:E2, tokens=1, below=of g2](e2){};
+\node[place, label=below:E3, tokens=0, below=of g3](e3){};
+
+\node[place, label=F1, tokens=1, left=of e1](f1){};
+\node[place, label=F2, tokens=0, right=of e1](f2){};
+\node[place, label=F3, tokens=0, right=of e2](f3){};
+ 
+\node[transition, minimum width=12mm, minimum height=2mm, label=below left:R1, tokens=0, below=of e1](r1){};
+\node[transition, minimum width=12mm, minimum height=2mm, label=below left:R2, tokens=0, below=of e2](r2){};
+\node[transition, minimum width=12mm, minimum height=2mm, label=below left:R3, tokens=0, below=of e3](r3){};
+\draw[thick]
+(h1) edge[post] (g1)
+(h2) edge[post] (g2)
+(h3) edge[post] (g3)
+(f1) edge[post] (g1)
+% (f1) edge[post] (g3)
+(f2) edge[post] (g1)
+(f2) edge[post] (g2)
+(f3) edge[post] (g2)
+(f3) edge[post] (g3)
+%
+(g1) edge[post, color=black] (e1)
+(g2) edge[post, color=black] (e2)
+(g3) edge[post, color=black] (e3)
+%
+(e1) edge[post] (r1)
+(e2) edge[post] (r2)
+(e3) edge[post] (r3)
+%
+% (r1) edge[post] (h1)
+(r1) edge[post] (f1)
+(r1) edge[post] (f2)
+% (r2) edge[post] (h2)
+(r2) edge[post] (f2)
+(r2) edge[post] (f3)
+% (r3) edge[post] (h3)
+(r3) edge[post] (f3)
+% (r3) edge[post] (f1)
+;
+\draw [->,color=blue] (f1) to ++(0,2.5) -- ++(9.5, 0) -- (g3);
+\draw [->,color=red] (r1) to ++(-2.5,0) -- ++(0, 4.7) -- (h1);
+\draw [->,color=red] (r2) to ++(-2.5,0) -- ++(0, 4.7) -- (h2);
+\draw [->,color=red] (r3) to ++(-2.5,0) -- ++(0, 4.7) -- (h3);
+\draw [->,color=blue] (r3) to ++(0,-0.8) -|  (f1);
+\end{tikzpicture}
+}

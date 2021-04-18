@@ -1,0 +1,71 @@
+\begin{frame}
+    \frametitle{What is a Petri-Net}
+    \begin{itemize}
+        \item It is a modeling language.
+        \item It is a \emph{directed} \emph{bipartite} graph.
+        \item Petri-Nets have two type of nodes: \emph{places} and \emph{transitions}.
+        \item Arcs connect \emph{places} to \emph{transitions} and vice-versa.
+        \item Places hold \emph{tokens}.
+        \item \emph{Tokens} determine the state (also called marking) of the system.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example of a Petri-Net graph}
+    \begin{itemize}
+        \item{Circles are \emph{places}}
+        \item{Rectangles are \emph{transitions}}
+        \item{Dots are \emph{tokens}}
+    \end{itemize}
+    \begin{figure}
+        \centering
+        \intropetrinet{}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Transition Rules}
+    \begin{itemize}
+        \item{A transition is \emph{enabled} if all its input \emph{places} has at-least one token.}
+        \item{If multiple transitions are \emph{enabled} one could \emph{fire} non-deterministically.}
+        \item{In this Petri-Net, $t_1$ is enabled but $t_2$ is not}
+    \end{itemize}
+    \begin{figure}
+        \centering
+        \intropetrinet[red][blue]{}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Transition Rules (continued)}
+    \begin{itemize}
+        \item{When a \emph{transition} fires,
+            \begin{itemize}
+                \item{One token is consumed from each input \emph{places}}
+                \item{One token is produced in all output \emph{places}}
+            \end{itemize}}
+    \end{itemize}
+    \begin{figure}
+        \centering
+        \tikzset{node distance = 0.5cm and 0.5cm}
+        \intropetrinet[red][black][0.5]{}
+        \intropetrinetnext[red][black][0.5]{}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example: Dining Philosophers}
+    \begin{figure}
+        \centering
+        \tikzset{node distance = 1.0cm and 1.0cm}
+        \diningphilos{}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Example: Dining Philosophers (continued)}
+    \begin{figure}
+        \centering
+        \tikzset{node distance = 1.0cm and 1.0cm}
+        \diningphilosnext{}
+    \end{figure}
+\end{frame}

@@ -1,0 +1,83 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+\usepackage{tikz}
+\usetikzlibrary{petri, automata, positioning}
+
+\usepackage{xparse}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={3.0},
+]{doclicense}
+
+% -----------------
+
+\def\uniname{Sharif University of Technology}
+
+% Add table of content at the begining of each section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \ifnum \value{framenumber} > 1 {
+        \usebeamerfont{footline}%
+        \usebeamercolor[fg]{footline}%
+        % \hspace{1em}%
+        % \doclicenseThis{}
+        \hspace{1em}%
+        \insertframenumber/\inserttotalframenumber
+    } \else {} \fi
+}
+\setbeamercolor{footline}{fg=blue}
+\setbeamerfont{footline}{series=\bfseries}
+
+% Slide information
+\title[Petri-Nets] % (optional, only for long titles)
+{Syntax and Semantics of Petri-Nets}
+\subtitle{Defining Petri-Nets with Transition Systems}
+\author[Author, Shahinfar]
+{Farbod Shahinfar} % \inst{1}
+\institute[\uniname]
+{
+    % \inst{1}%
+    Department of Computer Engineering\newline
+    \uniname
+}
+\date[Sharif 2021] % (optional)
+{Model Checking and Verification - 2021}
+\subject{Computer Science}
+
+
+% Project Specific Definitions
+\input{example_petri_net}
+% ------------------------------
+
+\begin{document}
+% Title
+    \begin{frame}[plain]\titlepage\end{frame}
+% ========================
+
+\section[Introduction]{Introduction to Petri-Nets}
+\input{01_introduction}
+
+\section[Structural Definition]{Structural Definition}
+\input{02_structural_definition}
+
+\section[Semantics]{Semantics of Petri-Nets: Transition Systems}
+\input{03_semantics}
+
+% \begin{frame}
+% \doclicenseThis{}
+% \end{frame}
+\end{document}
