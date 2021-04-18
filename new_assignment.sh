@@ -23,7 +23,7 @@ then
     usage
     exit 1
 fi
-if [ $1 != 'fa' ] && [ $1 != 'en']
+if [ $1 != 'fa' ] && [ $1 != 'en' ] && [ $1 != 'en-slides' ]
 then
     usage
     exit 1
@@ -38,6 +38,7 @@ fi
 # get directory where this script is placed in
 # curfiledir=`dirname $0`
 # curfiledir=`realpath $curfiledir`
+# TODO: this should be found automatically
 curfiledir=/home/hawk/Workplace/Git/simple_assignment_solution_tex
 
 # create directory
@@ -55,6 +56,17 @@ then
     exit 1
 fi
 
+# Assignment template should now be instantiated
 srcdir="$curfiledir/$1"
 cp -r "$srcdir" "$target_path/"
 
+
+# Setting some placeholders in the template
+# script_path="$curfiledir/scripts/fill_placeholders.py"
+# $(exec $script_path $target_path)
+# if [ "$?" -ne "0" ]
+# then
+#     echo "Failed to fill the placeholders of the template!"
+#     exit 1
+# fi
+# echo "Instantiating the template finished"
