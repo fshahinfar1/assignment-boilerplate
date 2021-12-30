@@ -7,25 +7,27 @@
 % Import listings for code representation
 \usepackage{listings}
 \usepackage{color}
+\usepackage{xcolor}
+
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-\lstset{
-  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+\lstset
+  {backgroundcolor=\color{white},  % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
   basicstyle=\footnotesize\ttfamily,        % the size of the fonts that are used for the code
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
   breaklines=true,                 % sets automatic line breaking
   captionpos=b,                    % sets the caption-position to bottom
   commentstyle=\color{mygreen},    % comment style
-  deletekeywords={...},            % if you want to delete keywords from the given language
+  deletekeywords={},               % if you want to delete keywords from the given language
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
   extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-  firstnumber=1,                % start line enumeration with line 1000
-  frame=single,	                   % adds a frame around the code
+  firstnumber=1,                   % start line enumeration with line 1000
+  frame=single,                    % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{blue},       % keyword style
-  language=c++,                 % the language of the code
-  morekeywords={*,...},            % if you want to add more keywords to the set
+  language=c++,                    % the language of the code
+  morekeywords={},                 % if you want to add more keywords to the set
   numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
   numbersep=5pt,                   % how far the line-numbers are from the code
   numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
@@ -35,13 +37,15 @@
   showtabs=false,                  % show tabs within strings adding particular underscores
   stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{mymauve},     % string literal style
-  tabsize=2,	                   % sets default tabsize to 2 spaces
-  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
 % Import these packages for drawing markov chains
 \usepackage{tikz}
 \usetikzlibrary{automata, positioning}
+
+\usepackage{fancyhdr}
 
 % xepersian should be the last package that is loaded
 \usepackage[localise=on]{xepersian}
@@ -69,23 +73,26 @@
 \newcommand{\mytitle}{
   % Logo
   \begin{tabular}{cc}
-  \includegraphics[width=0.1\linewidth]{\mylogo} &
-    \raisebox{0.05\linewidth}{
-      \begin{tabular}{c}
-        \myuniversity \\
-        \mydepartment
-      \end{tabular}
-    }
-\end{tabular}
-% Title
-\begin{center}
-{\Huge\textbf{\mytitletext}\par}
-\vspace{3mm}
-{\Large\textbf\mysubtitle\par}
-\vspace{5mm}
-{\large\myauthorname \\ \mystdno \par}
-\end{center}
+    \includegraphics[width=0.1\linewidth]{\mylogo} &
+    \raisebox{0.05\linewidth}
+    {\begin{tabular}{c}
+      \myuniversity \\
+      \mydepartment
+    \end{tabular}}
+  \end{tabular}
+  % Title
+  \begin{center}
+  {\Huge\textbf{\mytitletext}\par}
+  \vspace{3mm}
+  {\Large\textbf\mysubtitle\par}
+  \vspace{5mm}
+  {\large\myauthorname \\ \mystdno \par}
+  \end{center}
 }
+
+\pagestyle{fancy}
+\chead{\mytitletext}
+\lhead{\myauthorname}
 
 % Command Definitions
 \newcommand{\myhline}{\noindent\rule[0.5ex]{\linewidth}{1pt}\par}
