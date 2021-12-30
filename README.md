@@ -14,7 +14,7 @@ You may use `new_assignment.sh` to quickly setup a new environment.
 The `new_assignment.sh` can be installed using following command.
 
 ```
-ln -s ~/.local/bin/nass ./new_assignment.sh
+cp -s `pwd`/new_assignment.sh ~/.local/bin/nass
 ```
 
 **Issue:** currently `curfiledir=` should be updated inside the `new_assignment.sh`
