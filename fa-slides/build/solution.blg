@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ./build//solution.aux
+The style file: plain.bst
+Database file #1: ref_en.bib
+Warning--entry type for "google_cern" isn't style-file defined
+--line 174 of file ref_en.bib
+Warning--entry type for "amazon_mikros" isn't style-file defined
+--line 181 of file ref_en.bib
+Warning--entry type for "amazon_netflix" isn't style-file defined
+--line 188 of file ref_en.bib
+Warning--empty booktitle in kounev2021toward
+Warning--can't use both volume and number fields in wu2022container
+You've used 15 entries,
+            2118 wiz_defined-function locations,
+            570 strings with 7126 characters,
+and the built_in function-call counts, 5481 in all, are:
+= -- 498
+> -- 342
+< -- 4
++ -- 136
+- -- 120
+* -- 366
+:= -- 913
+add.period$ -- 50
+call.type$ -- 15
+change.case$ -- 104
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 205
+empty$ -- 429
+format.name$ -- 120
+if$ -- 1156
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 12
+newline$ -- 75
+num.names$ -- 30
+pop$ -- 146
+preamble$ -- 1
+purify$ -- 89
+quote$ -- 0
+skip$ -- 140
+stack$ -- 0
+substring$ -- 173
+swap$ -- 48
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 60
+warning$ -- 2
+while$ -- 38
+width$ -- 17
+write$ -- 156
+(There were 5 warnings)

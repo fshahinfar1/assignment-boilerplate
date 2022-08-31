@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{مقدمه}{3}{0}{1}
+\beamer@sectionintoc {2}{کارهای مرتبط پیشین}{15}{0}{2}
+\beamer@sectionintoc {3}{راهکار پیشنهادی}{21}{0}{3}
+\beamer@sectionintoc {4}{نتیجه‌گیری}{27}{0}{4}
+\beamer@sectionintoc {5}{کارهای آتی}{29}{0}{5}

@@ -1,0 +1,223 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+% Import listings for code representation
+%\usepackage{listings}
+%\usepackage{color}
+%\usepackage{xcolor}
+%% \usepackage{fancyhdr}
+%
+%\definecolor{mygreen}{rgb}{0,0.6,0}
+%\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+%\definecolor{mymauve}{rgb}{0.58,0,0.82}
+%\lstset
+%  {backgroundcolor=\color{white},  % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+%  basicstyle=\footnotesize\ttfamily,        % the size of the fonts that are used for the code
+%  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+%  breaklines=true,                 % sets automatic line breaking
+%  captionpos=b,                    % sets the caption-position to bottom
+%  commentstyle=\color{mygreen},    % comment style
+%  deletekeywords={},               % if you want to delete keywords from the given language
+%  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+%  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+%  firstnumber=1,                   % start line enumeration with line 1000
+%  frame=single,                    % adds a frame around the code
+%  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+%  keywordstyle=\color{blue},       % keyword style
+%  language=c++,                    % the language of the code
+%  morekeywords={},                 % if you want to add more keywords to the set
+%  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+%  numbersep=5pt,                   % how far the line-numbers are from the code
+%  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+%  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+%  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+%  showstringspaces=false,          % underline spaces within strings only
+%  showtabs=false,                  % show tabs within strings adding particular underscores
+%  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+%  stringstyle=\color{mymauve},     % string literal style
+%  tabsize=2,                       % sets default tabsize to 2 spaces
+%  title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+%}
+
+% Import these packages for drawing markov chains
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning}
+\usepackage[most]{tcolorbox}
+
+%\usepackage{hyperref}
+%\hypersetup{colorlinks=false, linkcolor=blue, urlcolor=blue,}
+%\usepackage{setspace}
+%\usepackage{multicol}
+
+% \usepackage{changepage} % For changing the margin of parts of the page
+%\usepackage[section]{placeins} % don't allow figures to overflow to other sections
+
+% xepersian should be the last package that is loaded
+\usefonttheme{serif}
+\usepackage[localise=on]{xepersian}
+\settextfont{XB Niloofar}
+% \settextfont{BNazanin}
+\setlatintextfont{Crimson}
+% Fonts
+%\settextfont[Scale=1.1]{B Nazanin}
+%\setlatintextfont{Times New Roman}
+
+\beamertemplatenavigationsymbolsempty
+\usetheme{CambridgeUS}
+%\usecolortheme{beaver}
+\useoutertheme{miniframes}
+%\useinnertheme{circles}
+% ------------------------------------------------------------------------------
+
+% Title Definition
+\def \mytitletextfa {بهینه‌سازی توزیع‌بار برای سکو‌های خدمات پردازش بدون‌میزبان با استفاده از روش‌های مدل‌سازی}
+\def \mytitletexteng {‫‪Optimizing Load Balancing for Serverless Computing Platforms Using Modeling Approaches}
+\def \myauthorname {فربد شاهین‌فر}
+\def \mystdno{۹۹۲۰۱۴۷۶}
+\def \myuniversity{دانشگاه صنعتی شریف}
+\def \mydepartment{دانشکده مهندسی کامپیوتر}
+\def \mymajro{مهندسی نرم‌افزار}
+\def \mylogo{res/logo.pdf}  % نشان دانشگاه
+\def \advisorname{دکتر علی موقر رحیم‌آبادی}
+\def \adversaryname{دکتر جعفر حبیبی}
+\def \mydatetext{بهمن ۱۴۰۰}
+
+% ------------------------------------------------------------------------------
+\newcommand{\mytitle}{
+	\centering
+	% Logo
+	\begin{flushright}
+	\begin{tabular}{cc}
+		\centering
+		\includegraphics[width=0.1\linewidth]{\mylogo} &
+		\raisebox{0.03\linewidth}
+		{\begin{tabular}{r}
+				\tiny\myuniversity \\
+				\tiny\mydepartment \\
+				{\tiny سمینار کارشناسی ارشد گرایش \mymajro}
+		\end{tabular}}
+	\end{tabular}
+	\end{flushright}
+% 	\begin{figure}[!h]
+%	   	\centering
+%		 \includegraphics[width=0.12\linewidth]{\mylogo}
+%	\end{figure}
+%	{\tiny \myuniversity \\ \mydepartment \\ \raisebox{2mm}{سمینار کارشناسی ارشد گرایش \mymajro}}
+	\vspace{0.5cm}
+	\begin{center}
+ 	 % Title
+	 {\textbf{\mytitletextfa} \\ \vspace{3mm} \latin{\textbf{\mytitletexteng}}}
+
+  % Author information
+  \vspace{3mm}
+  {\small  نگارش: {\myauthorname} - {{\mystdno}} \par}
+  \vspace {3mm}
+  {\small استاد راهنما: {\advisorname}\par}
+  \vspace {3mm}
+  {\small استاد ممتحن داخلی: {\adversaryname} \par}
+  % Date
+  \vspace {0.5cm} {\small\mydatetext\par}
+	\end{center}
+}
+
+%\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+%\pagestyle{fancy}
+%\rhead{}
+%\chead{}
+%\lhead{\leftmark}
+
+% Command Definitions
+\newcommand{\myhline}{\noindent\rule[0.5ex]{\linewidth}{1pt}\par}
+\newcommand{\زیرل}[1]{\footnote{\lr{#1}}}
+\def\مل{\lr}
+\makeatletter
+\newcommand{\RTList}{\raggedleft\rightskip\@totalleftmargin} 
+\makeatother
+\newcommand{\توچشم}[1]{\textit{\color{blue}#1}}
+\newcommand{\mybox}[2]{\begin{minipage}{0.8\linewidth}
+	\setbeamertemplate{block begin}[default]
+	\setbeamertemplate{block end}[default]
+	\begin{block}{#1}
+		#2
+	\end{block}
+\end{minipage}}
+% ------------------------------------------------------------------------------
+
+% Document Specific Definitions
+\def\cpu{N_{cpu}}
+% ------------------------------------------------------------------------------
+
+\begin{document}
+\begin{persian}
+\everypar{\rightskip\rightmargin}
+
+% Title page
+\begin{frame}
+	\mytitle
+\end{frame}
+% Tables
+%\begin{frame}{فهرست مطالب}
+%	% Why aligning this to the right was so hard?
+%	\begin{flushright}
+%	\hspace{1cm}
+%	\begin{minipage}{5cm}
+%		\tableofcontents[hideallsubsections]
+%	\end{minipage}
+%	\end{flushright}
+%\end{frame}
+% Show list of things in beging of each section
+\AtBeginSection[ ]
+{
+\begin{frame}{فهرست مطالب}
+	\begin{flushright}
+		\hspace{1cm}
+		\begin{minipage}{10cm}
+			\tableofcontents[currentsection]
+		\end{minipage}
+	\end{flushright}
+\end{frame}
+}
+
+% Goal
+\begin{frame}{هدف}
+	\begin{itemize}\RTList
+	\فقره پردازش بدون‌میزبان راهکار جدیدی برای ارائه خدمات ابری است.
+	\فقره توزیع مناسب بار کاری یکی از بخش‌های اساسی آن است. 
+	\فقره هدف از این پروژه ارزیابی کارایی الگوریتم‌های توزیع‌بار مودجود برای سکوهای پردازش بدون‌میزبان است.
+	\فقره ایجاد یک مدل مناسب از این سیستم امکان تحلیل مناسب را ایجاد می‌کند.
+	\end{itemize}
+\end{frame}
+
+%% Abstract
+%\input{sec/abstract}
+% Preliminaries
+\input{sec/preliminary}
+%% Related works
+\input{sec/literature}
+%% Solution
+\input{sec/solution}
+%% Conclusion
+\input{sec/conclusion}
+%% Future works
+\input{sec/future}
+% References
+\قسمت*{مراجع}
+\begin{frame}[allowframebreaks]{مراجع}
+\begin{latin}
+{
+\bibliographystyle{plain}
+\footnotesize
+\bibliography{ref_en.bib}
+}
+\end{latin}
+\end{frame}
+
+% Dictionary
+\قسمت*{واژه‌نامه}
+\begin{frame}[allowframebreaks]{واژنامه}
+	\input{sec/dictionary}
+\end{frame}
+
+\end{persian}
+\end{document}

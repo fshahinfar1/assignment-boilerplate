@@ -1,0 +1,98 @@
+\begin{thebibliography}{10}
+
+\bibitem{amazon_mikros}
+Amazon.
+\newblock Mikros creates animated feature film in less than 20 months, iterates
+  three times faster using aws.
+
+\bibitem{aumala2019beyond}
+Gabriel Aumala, Edwin Boza, Luis Ortiz-Avil{\'e}s, Gustavo Totoy, and Cristina
+  Abad.
+\newblock Beyond load balancing: Package-aware scheduling for serverless
+  platforms.
+\newblock In {\em International Symposium on Cluster, Cloud and Grid Computing
+  (CCGRID)}. IEEE/ACM, 2019.
+
+\bibitem{baboi2019dynamic}
+Mihai Baboi, Adrian Iftene, and Daniela G{\^\i}fu.
+\newblock Dynamic microservices to create scalable and fault tolerance
+  architecture.
+\newblock In {\em Procedia Computer Science}, volume 159, pages 1035--1044.
+  Elsevier, 2019.
+
+\bibitem{google_cern}
+Google.
+\newblock Helping researchers at cern to analyze powerful data and uncover the
+  secrets of our universe.
+
+\bibitem{jia2021nightcore}
+Zhipeng Jia and Emmett Witchel.
+\newblock Nightcore: efficient and scalable serverless computing for
+  latency-sensitive, interactive microservices.
+\newblock In {\em Conference on Architectural Support for Programming Languages
+  and Operating Systems (ASPLOS)}, 2021.
+
+\bibitem{kounev2021toward}
+Samuel Kounev, Cristina Abad, Ian Foster, Nikolas Herbst, Alexandru Iosup,
+  Samer Al-Kiswany, Ahmed Ali-Eldin Hassan, Bartosz Balis, Andre Bauer, Andre
+  Bondi, et~al.
+\newblock Toward a definition for serverless computing.
+\newblock Schloss Dagstuhl, 2021.
+
+\bibitem{lee2021greedy}
+Youngsoo Lee and Sunghee Choi.
+\newblock A greedy load balancing algorithm for faas platforms.
+\newblock In {\em International Conference on Cloud and Big Data Computing
+  (ICCBDC)}, 2021.
+
+\bibitem{lin2020modeling}
+Changyuan Lin and Hamzeh Khazaei.
+\newblock Modeling and optimization of performance and cost of serverless
+  applications.
+\newblock {\em IEEE Transactions on Parallel and Distributed Systems},
+  32(3):615--632, 2020.
+
+\bibitem{mahmoudi2020performance}
+Nima Mahmoudi and Hamzeh Khazaei.
+\newblock Performance modeling of serverless computing platforms.
+\newblock In {\em Transactions on Cloud Computing}. IEEE, 2020.
+
+\bibitem{mampage2021deadline}
+Anupama Mampage, Shanika Karunasekera, and Rajkumar Buyya.
+\newblock Deadline-aware dynamic resource management in serverless computing
+  environments.
+\newblock In {\em International Symposium on Cluster, Cloud and Internet
+  Computing (CCGrid)}. IEEE/ACM, 2021.
+
+\bibitem{amazon_netflix}
+Mayukh Nair.
+\newblock How netflix works: the (hugely simplified) complex stuff that happens
+  every time you hit play.
+
+\bibitem{shahrad2020serverless}
+Mohammad Shahrad, Rodrigo Fonseca, {\'I}{\~n}igo Goiri, Gohar Chaudhry, Paul
+  Batum, Jason Cooke, Eduardo Laureano, Colby Tresness, Mark Russinovich, and
+  Ricardo Bianchini.
+\newblock Serverless in the wild: Characterizing and optimizing the serverless
+  workload at a large cloud provider.
+\newblock In {\em Annual Technical Conference (ATC)}. USENIX, 2020.
+
+\bibitem{tariq2020sequoia}
+Ali Tariq, Austin Pahl, Sharat Nimmagadda, Eric Rozner, and Siddharth Lanka.
+\newblock Sequoia: Enabling quality-of-service in serverless computing.
+\newblock In {\em Symposium on Cloud Computing (SoCC)}. ACM, 2020.
+
+\bibitem{wu2022container}
+Song Wu, Zhiheng Tao, Hao Fan, Zhuo Huang, Xinmin Zhang, Hai Jin, Chen Yu, and
+  Chun Cao.
+\newblock Container lifecycle-aware scheduling for serverless computing.
+\newblock In {\em Software: Practice and Experience}, volume~52, pages
+  337--352. Wiley Online Library, 2022.
+
+\bibitem{yu2021faasrank}
+Hanfei Yu, Athirai~A Irissappane, Hao Wang, and Wes~J Lloyd.
+\newblock Faasrank: Learning to schedule functions in serverless platforms.
+\newblock In {\em International Conference on Autonomic Computing and
+  Self-Organizing Systems (ACSOS)}. IEEE, 2021.
+
+\end{thebibliography}

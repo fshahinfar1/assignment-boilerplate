@@ -23,7 +23,8 @@ then
     usage
     exit 1
 fi
-if [ $1 != 'fa' ] && [ $1 != 'en' ] && [ $1 != 'en-slides' ]
+
+if [ $1 != 'fa' ] && [ $1 != 'en' ] && [ $1 != 'en-slides' ]  && [ $1 != 'sigcomm' ] && [ $1 != 'fa-slides' ]
 then
     usage
     exit 1
@@ -39,7 +40,7 @@ fi
 # curfiledir=`dirname $0`
 # curfiledir=`realpath $curfiledir`
 # TODO: this should be found automatically
-curfiledir=/home/hawk/Workplace/Git/simple_assignment_solution_tex
+curfiledir=/media/disk/myworkspace/git/assignment-boilerplate
 
 # create directory
 target_dir=`pwd`
